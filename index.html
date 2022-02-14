@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.12/typed.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.1/jquery.waypoints.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
+    <title>Document</title>
+</head>
+<body>
+    <!-- Scroll Up Button -->
+    <div class="scroll-up-btn">
+        <i class="fas fa-angle-up"></i>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="max-width">
+            <div class="logo"><a href="#">Andrey <span>WebDays</span></a></div>
+            <ul class="menu">
+                <li><a href="#about" class="menu-btn">About</a></li>
+                <li><a href="#projects" class="menu-btn">Projects</a></li>
+                <li><a href="#skills" class="menu-btn">Skills</a></li>
+                <li><a href="#references" class="menu-btn">References</a></li>
+                <li><a href="#contact" class="menu-btn">Contact</a></li>
+            </ul>
+            <div class="menu-btn">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </nav>    
+
+    <!-- About Section -->
+    <section class="about" id="about">
+        <div class="max-width">
+            <div class="about-content">
+                <div class="column left">
+                    <div class="title-1">Hello, my name is Andrey,</div>
+                    <div class="title-2">and I'm a <span class="typing"></span></div>
+                    <p>Multi-disciplinary maker with 10+ years of combined IT experience. Can adapt to both self-starting and collaborative environments while staying focused on project goals.</p>
+                    <p>In my spare time I like learning new technologies, visual production, and building my own projects.</p>
+                    <div class="circles">
+                        <a href="https://www.linkedin.com/in/andreywebdays/" target="_blank" rel="noopener noreferrer">
+                            <div class="circle">
+                                <i class="fab fa-linkedin-in"></i>
+                            </div>
+                        </a>
+                        <a href="https://github.com/andreywebdays" target="_blank" rel="noopener noreferrer">
+                            <div class="circle">
+                                <i class="fab fa-github"></i>
+                            </div>
+                        </a>
+                        <a href="https://codepen.io/andreywebdays" target="_blank" rel="noopener noreferrer">
+                            <div class="circle">
+                                <i class="fab fa-codepen"></i>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <div class="column right">
+                    <img src="img/profile-awd-3.jpg" alt="">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section class="projects" id="projects">
+        <div class="max-width">
+            <h2 class="title">Projects</h2>
+            <div class="projects-content">
+                
+                <!-- Iron Dog -->
+                <div class="card">
+                    <div class="card-bg prj-irondog"></div>
+                    <div class="card-desc">Iron Dog, Inc (2012)</div>
+                    <div class="card-tint">
+                        <div class="card-box">
+                            <div class="card-title">Iron Dog RDTS</div>
+                            <p>Race Database Tracking System</p>
+                            <div class="card-tags">
+                                <span>PHP</span>
+                                <span>HTML</span>
+                                <span>CSS</span>
+                                <span>JS</span>
+                                <span>jQuery</span>
+                                <span>Wordpress</span>
+                            </div>
+                            <div class="card-links">
+                                <a href="https://www.irondog.org/race/track" target="_blank" rel="noopener noreferrer">Website</a>
+                                <a href="https://github.com/andreywebdays/RDTS" target="_blank" rel="noopener noreferrer">GitHub</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Kings & Queens Production -->
+                <div class="card">
+                    <div class="card-bg prj-kq"></div>
+                    <div class="card-desc">Kings & Queens Production (2018)</div>
+                    <div class="card-tint">
+                        <div class="card-box">
+                            <div class="card-title">Kings & Queens Production</div>
+                            <p>WordPress plugin and theme customization</p>
+                            <div class="card-tags">
+                                <span>Wordpress</span>
+                                <span>HTML</span>
+                                <span>CSS</span>
+                                <span>JS</span>
+                            </div>
+                            <div class="card-links">
+                                <a href="https://www.kqproduction.com/" target="_blank" rel="noopener noreferrer">Website</a>
+                                <a href="https://github.com/andreywebdays/WPTheme-Salient-CustomCSS-KQproduction/blob/main/css/style.css" target="_blank" rel="noopener noreferrer">GitHub</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+    
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section class="skills" id="skills">
+        <div class="max-width">
+            <h2 class="title">Skill Set</h2>
+            <div class="skills-content">
+                <div class="column left">
+                    <div class="text">Current expertise and learning goals:</div>
+                    <p>My current strongest web development skills are PHP, SQL, HTML & CSS. Runner ups are JS and Laravel. I've also worked with multiple libraries like jQuery, Bootstrap, etc. As is said - skills can be taught, personality is inherent. Currently I am getting more experience with Laravel and VueJS. Click the button below to view a list of all the technologies and tools I ever worked with.</p>
+                    <a href="#">See list</a>
+                </div>
+                <div class="column right">
+                    <div class="bars">
+                        <div class="info">
+                            <span>PHP</span>
+                            <span>80%</span>
+                        </div>
+                        <div class="line php"></div>
+                    </div>
+                    <div class="bars">
+                        <div class="info">
+                            <span>HTML</span>
+                            <span>90%</span>
+                        </div>
+                        <div class="line html"></div>
+                    </div>
+                    <div class="bars">
+                        <div class="info">
+                            <span>CSS</span>
+                            <span>80%</span>
+                        </div>
+                        <div class="line css"></div>
+                    </div>
+                    <div class="bars">
+                        <div class="info">
+                            <span>MySQL</span>
+                            <span>70%</span>
+                        </div>
+                        <div class="line mysql"></div>
+                    </div>
+                    <div class="bars">
+                        <div class="info">
+                            <span>JavaScript</span>
+                            <span>50%</span>
+                        </div>
+                        <div class="line javascript"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- References Section -->
+    <section class="references" id="references">
+        <div class="max-width">
+            <h2 class="title">References</h2>
+            <div class="carousel owl-carousel">
+                
+                <!-- Iron Dog -->
+                <div class="card">
+                    <div class="box">
+                        <img src="img/logo-irondog-2.jpg" alt="">
+                        <div class="text">Iron Dog, Inc</div>
+                        <p>"Thanks Artem and Andrey overall course time has been corrected! They are helping <a href="https://www.irondog.org/" target="_blank" rel="noopener noreferrer">Iron Dog</a> to develop an application to assist with tracking and reporting time during the race..."</p>
+                        <p><span>- <a href="https://www.linkedin.com/in/kevinkastner/" target="_blank" rel="noopener noreferrer">Kevin Kastner</a>, Executive Director & CEO</span></p>
+                    </div>
+                </div>
+                
+                <!-- The Northern Light -->
+                <div class="card">
+                    <div class="box">
+                        <img src="img/logo-thenorthernlight-1.jpg" alt="">
+                        <div class="text">The Northern Light</div>
+                        <p>"Recognizes Andrey for his layout design contribution to <a href="https://www.thenorthernlight.org/" target="_blank" rel="noopener noreferrer">The Northern Light</a> newspaper this week of the 19 of February, two-thousand and eight. His dedication has been noted by colleagues, advisers and the community served by this proud media organiation..."</p>
+                    </div>
+                </div>
+
+                <!-- Technology Assessment Unit -->
+                <div class="card">
+                    <div class="box">
+                        <img src="img/logo-tau-1.jpg" alt="">
+                        <div class="text">Tech Assessment Unit</div>
+                        <p>"During his work, Andrey has established himself as a disciplined and accurate worker. He is a hardworking, highly efficient, sociable, tactful person and quickly finds a common language with people..."</p>
+                        <p><span>- Irene Ivakhin, Team Manager</span></p>
+                    </div>
+                </div>
+                
+                <!-- UAA CBPP -->
+                <div class="card">
+                    <div class="box">
+                        <img src="img/logo-uaacbpp-2.jpg" alt="">
+                        <div class="text">UAA CBPP</div>
+                        <p>"Congratulations! On behalf of Dean Bear Baker and the faculty of the <a href="https://business.uaa.alaska.edu/" target="_blank" rel="noopener noreferrer">College of Business and
+                        Public Policy</a>, I'm happy to recognize your standing as a member of the Spring 2011 Dean's
+                        List. It's a significant accomplishment your hard work and commitment to learning have
+                        distinguished you at UAA..."</p>
+                    </div>
+                </div>
+
+                <!-- ANTHC -->
+                <div class="card">
+                    <div class="box">
+                        <img src="img/logo-anthc-1.png" alt="">
+                        <div class="text"><a href="https://anthc.org/" target="_blank" rel="noopener noreferrer">ANTHC</a></div>
+                        <p>"Andrey is progressing nicely, always eager for new assignments and follows through as required on the projects..."</p> 
+                        <p><span>- <a href="https://www.linkedin.com/in/kristen-cady-8129bb140" target="_blank" rel="noopener noreferrer">Kristen Cady</a>, Director Clinical Informatics</span></p>
+                    </div>
+                </div>
+
+                <!-- Art K -->
+                <div class="card">
+                    <div class="box">
+                        <img src="img/logo-startalaskait-1.webp" alt="">
+                        <div class="text">StartAlaska IT (Collaboration)</div>
+                        <p>"His way to lead people in confidence in variety of challenges had brought him praises not just from me but other people as well. Over last couple years he has demonstrated a strong commitment to enhancing his knowledge and skills in new technologies and has grown into a productive, highly-organized and efficient team player..."</p> 
+                        <p><span>- <a href="https://www.linkedin.com/in/artem-kuligin-8b1037126/" target="_blank" rel="noopener noreferrer">Art Kuligin</a>, Chief Infrastructure Engineer</span></p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTACT Section -->
+    <section class="contact" id="contact">
+        <div class="max-width">
+            <h2 class="title">Contact me</h2>
+            <div class="contact-content">
+                <div class="column left">
+                    <div class="text">Let's make something great!</div>
+                    <p>I currently work remotely with a selected freelance client base and open for new opportunities. If you’d like to chat about a project or just have question, please fill in the form below. I aim to get back within 2 days.</p>
+                </div>
+                <div class="column right">
+                    <div class="text">Message me</div>
+                    <form action="#">
+                        <div class="fields">
+                            <div class="field name">
+                                <input type="text" placeholder="Name" required>
+                            </div>
+                            <div class="field email">
+                                <input type="email" placeholder="Email" required>
+                            </div>
+                        </div>
+                        <div class="field">
+                            <input type="text" placeholder="Subject" required>
+                        </div>
+                        <div class="field textarea">
+                            <textarea cols="30" rows="10" placeholder="Message.." required></textarea>
+                        </div>
+                        <div class="button-area">
+                            <button type="submit">Send message</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER Section -->
+    <footer>
+        <span>Created by <a href="https://www.andreywebdays.com">Andrey WebDays</a> | <span class="far fa-copyright"></span> 2022 All rights reserved.</span>
+    </footer>
+
+<script src="main.js"></script>
+
+</body>
+</html>
