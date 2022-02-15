@@ -248,7 +248,7 @@
         </div>
     </section>
 
-    <!-- CONTACT Section -->
+    <!-- Contact Section -->
     <section class="contact" id="contact">
         <div class="max-width">
             <h2 class="title">Contact me</h2>
@@ -266,6 +266,9 @@
                         <!-- Disable Captcha (FormSubmit.co) -->
                         <input type="hidden" name="_captcha" value="false">
 
+                        <!-- Success -->
+                        <input type="hidden" name="_next" value="https://andreywebdays.com">
+
                         <div class="fields">
                             <div class="field name">
                                 <input type="text" name="Name" placeholder="Name" required>
@@ -275,7 +278,7 @@
                             </div>
                         </div>
                         <div class="field">
-                            <input type="text" name="Subject" placeholder="Subject" required>
+                            <input type="text" name="_subject" placeholder="Subject" required>
                         </div>
                         <div class="field textarea">
                             <textarea cols="30" rows="10" name="Message" placeholder="Message.." required></textarea>
@@ -289,7 +292,7 @@
         </div>
     </section>
 
-    <!-- FOOTER Section -->
+    <!-- Footer -->
     <footer>
         <span>Created by <a href="https://www.andreywebdays.com">Andrey WebDays</a> | <span class="far fa-copyright"></span> 2022 All rights reserved.</span>
     </footer>
