@@ -424,7 +424,10 @@ svg.theme_svg .dark{
     text-align: center;
     overflow: hidden;
 
-    transition: all 0.3s ease;
+    transition: all 0.3s ease !important;
+    -o-transition: all 0.3s ease !important;
+    -moz-transition: all 0.3s ease !important;
+    -webkit-transition: all 0.3s ease !important;
 }
 
 .prj-kq{
@@ -445,7 +448,10 @@ svg.theme_svg .dark{
     background: var(--color-accent-1);
     /* opacity: 1; */
 
-    transition: all 0.3s ease;
+    transition: all 0.3s ease !important;
+    -o-transition: all 0.3s ease !important;
+    -moz-transition: all 0.3s ease !important;
+    -webkit-transition: all 0.3s ease !important;
 }
 
 .projects .card-tint{
@@ -456,7 +462,10 @@ svg.theme_svg .dark{
     padding: 15px 30px;
     background: var(--color-card-tint);
     
-    transition: all 0.3s ease;
+    transition: all 0.3s ease !important;
+    -o-transition: all 0.3s ease !important;
+    -moz-transition: all 0.3s ease !important;
+    -webkit-transition: all 0.3s ease !important;
 }
 
 .projects .card-box{
@@ -468,7 +477,10 @@ svg.theme_svg .dark{
     height: 100%;
     /* opacity: 1; */
 
-    transition: all 0.3s ease;
+    transition: all 0.3s ease !important;
+    -o-transition: all 0.3s ease !important;
+    -moz-transition: all 0.3s ease !important;
+    -webkit-transition: all 0.3s ease !important;
 }
 
 .projects .card-title,
@@ -525,12 +537,14 @@ svg.theme_svg .dark{
     bottom: -50px;
 }
 
-.projects .card:hover .card-tint{
+.projects .card:hover .card-tint,
+.projects .card-desc:hover .card-tint{
     top: 0;
     background: var(--color-card-tint-hover);
 }
 
-.projects .card:hover .card-box{
+.projects .card:hover .card-box,
+.projects .card-desc:hover .card-box{
     display: flex;
     /* opacity: 1; */
 }
@@ -668,6 +682,9 @@ svg.theme_svg .dark{
 
 .references .carousel .card:hover .box{    
     transform: scale(1.05);
+    -o-transform: scale(1.05);
+    -moz-transform: scale(1.05);
+    -webkit-transform: scale(1.05);
 }
 
 .references .carousel .card .card-title{
@@ -720,7 +737,11 @@ svg.theme_svg .dark{
     outline: none!important;
     border-radius: 50%;
     border: 2px solid var(--color-accent-1)!important;
-    transition: all 0.3s ease;
+    
+    transition: all 0.3s ease !important;
+    -o-transition: all 0.3s ease !important;
+    -moz-transition: all 0.3s ease !important;
+    -webkit-transition: all 0.3s ease !important;
 }
 
 .owl-dot.active{
