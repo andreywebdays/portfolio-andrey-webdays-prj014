@@ -22,10 +22,10 @@ $(document).ready(function(){
         $('html').css("scrollBehavior", "auto");
     });
     
-    // Toggle Menu/Navbar Script
+    // Toggle Menu/Navbar script
     $('.menu-btn').click(function(){
-        $('.navbar .menu').toggleClass("active");
-        $('.menu-btn i').toggleClass("active"); // make menu item look like an X
+        $('.navbar .menu-theme').toggleClass("active");
+        $('.menu-btn i').toggleClass("active"); // make menu item look like an X button
     })
 
     $('.navbar .menu li a').click(function(){
@@ -34,15 +34,8 @@ $(document).ready(function(){
     });
 
     // Typing text animation script
-    // var typed = new Typed(".typing", {
-    //     strings: ["YouTuber", "Developer", "Blogger", "Designer", "Freelancer"],
-    //     typeSpeed: 100,
-    //     backSpeed: 60,
-    //     loop: true
-    // });
-
-    var typed = new Typed(".typing", {
-        strings: ["&lt;h1&gt;...", "Web Developer", "<text style='color: var(--color-5)'>&lt;?php&gt;...</text>", "<text style='color: var(--color-5)'>PHP Developer</text>", "<text style='color: var(--color-5)'>Back-end Developer</text>", "<text style='color: var(--color-6)'>$(document).ready...</text>", "<text style='color: var(--color-6)'>Front-end Developer</text>", "<text style='color: var(--color-8)'>Freelancer</text>"],
+    var typing = new Typed(".typing", {
+        strings: ["&lt;h1&gt;...", "Web Developer", "<text style='color: var(--color-typing-3)'>&lt;?php&gt;...</text>", "<text style='color: var(--color-typing-3)'>PHP Developer</text>", "<text style='color: var(--color-typing-3)'>Back-end Developer</text>", "<text style='color: var(--color-typing-2)'>$(document).ready...</text>", "<text style='color: var(--color-typing-2)'>Front-end Developer</text>", "<text style='color: var(--color-typing-4)'>Freelancer</text>"],
         typeSpeed: 100,
         backSpeed: 60,
         loop: true
@@ -52,10 +45,9 @@ $(document).ready(function(){
     $('.carousel').owlCarousel({
         margin: 20,
         loop: true,
-        autoplay: 10000, // true
+        autoplay: true,
         autoplaySpeed: 1000,
-        autoplayTimeOut: 10000,
-        // smartSpeed: 2000,
+        autoplayTimeOut: 5000,
         slideSpeed: 300,
         paginationSpeed: 500,
         singleItem: true,
@@ -68,14 +60,41 @@ $(document).ready(function(){
                 items: 1,
                 nav: false
             },
-            600:{
+            700:{
                 items: 2,
                 nav: false
             },
-            1000:{
+            1300:{ // 3 Cards with screen width 1300px and more.
                 items: 3,
                 nav: false
             }
         }
     });
+
+    // Theme switch script
+    let theme = localStorage.getItem("theme");
+    const themeModeBtn = document.querySelector(".theme-btn");
+
+    if(theme == "true"){  
+        themeModeBtn.checked = theme;
+        settheme(true);
+    }else{
+
+    };
+
+    themeModeBtn.addEventListener("click", () => {
+        settheme(themeModeBtn.checked);
+    });
+
+    function settheme(mode){
+        if(mode == true){
+            document.getElementById("theme-style").href = "dark.css";
+            // document.getElementById("profile").src = "img/profile-dark.png";
+        }else{
+            document.getElementById("theme-style").href = "";
+            // document.getElementById("profile").src = "img/profile-light.png";
+        };
+        
+        localStorage.setItem("theme", mode);
+    };
 });

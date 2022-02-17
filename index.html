@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
+    <link id="theme-style" rel="stylesheet" href="">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.12/typed.min.js"></script>
@@ -23,13 +24,22 @@
     <nav class="navbar">
         <div class="max-width">
             <div class="logo"><a href="#">Andrey <span>WebDays</span></a></div>
-            <ul class="menu">
-                <li><a href="#about" class="menu-btn">About</a></li>
-                <li><a href="#projects" class="menu-btn">Projects</a></li>
-                <li><a href="#skills" class="menu-btn">Skills</a></li>
-                <li><a href="#references" class="menu-btn">References</a></li>
-                <li><a href="#contact" class="menu-btn">Contact</a></li>
-            </ul>
+            <div class="menu-theme">
+                <ul class="menu">
+                    <li><a href="#about" class="menu-btn">About</a></li>
+                    <li><a href="#projects" class="menu-btn">Projects</a></li>
+                    <li><a href="#skills" class="menu-btn">Skills</a></li>
+                    <li><a href="#references" class="menu-btn">References</a></li>
+                    <li><a href="#contact" class="menu-btn">Contact</a></li>
+                </ul>
+                <div class="theme">
+                    <input type="checkbox" class="theme-btn">
+                    <svg class="theme_svg" xmlns="http://www.w3.org/2000/svg" style="isolation:isolate" viewBox="0 0 168 80">
+                        <path class="light" d="M27 39.482c0-12.694 10.306-23 23-23s23 10.306 23 23-10.306 23-23 23-23-10.306-23-23z"/>
+                        <path class="dark" d="M120 22.348c7.705 10.695 5.286 25.617-5.417 33.327-2.567 1.85-5.38 3.116-8.288 3.812 7.977 5.03 18.54 5.024 26.668-.83 10.695-7.706 13.122-22.634 5.418-33.33-5.855-8.127-15.88-11.474-25.04-9.23 2.538 1.582 4.806 3.676 6.66 6.25z"/>
+                    </svg>
+                </div>
+            </div>   
             <div class="menu-btn">
                 <i class="fas fa-bars"></i>
             </div>
@@ -40,9 +50,9 @@
     <section class="about" id="about">
         <div class="max-width">
             <div class="about-content">
-                <div class="column left">
-                    <div class="title-1">Hello, my name is Andrey,</div>
-                    <div class="title-2">and I'm a <span class="typing"></span></div>
+                <div class="left">
+                    <div class="sub-title">Hello, my name is Andrey,</div>
+                    <div class="sub-title">and I'm a <span class="typing"></span></div>
                     <p>Multi-disciplinary maker with 10+ years of combined IT experience. Can adapt to both self-starting and collaborative environments while staying focused on project goals.</p>
                     <p>In my spare time I like learning new technologies, visual production, and building my own projects.</p>
                     <div class="circles">
@@ -63,8 +73,8 @@
                         </a>
                     </div>
                 </div>
-                <div class="column right">
-                    <img src="img/profile-awd-3.jpg" alt="">
+                <div class="right">
+                    <img id="profile" src="img/profile-light.png" alt="">
                 </div>
             </div>
         </div>
@@ -99,7 +109,7 @@
                         </div>
                     </div>
                 </div>
-                
+
                 <!-- Kings & Queens Production -->
                 <div class="card">
                     <div class="card-bg prj-kq"></div>
@@ -132,9 +142,11 @@
             <h2 class="title">Skill Set</h2>
             <div class="skills-content">
                 <div class="column left">
-                    <div class="text">Current expertise and learning goals:</div>
-                    <p>My current strongest web development skills are PHP, SQL, HTML & CSS. Runner ups are JS and Laravel. I've also worked with multiple libraries like jQuery, Bootstrap, etc. As is said - skills can be taught, personality is inherent. Currently I am getting more experience with Laravel and VueJS. Click the button below to view a list of all the technologies and tools I ever worked with.</p>
-                    <a href="#">See list</a>
+                    <div class="sub-title">Expertise and learning goals:</div>
+                    <p>My strongest skills are PHP, SQL, HTML, and CSS. Runner ups are JS and Laravel. Also worked with libraries such as jQuery, Bootstrap, etc. As of today, getting more experience with Laravel and front-end frameworks like React and VueJS.</p>
+                    <p>List of all the tehcnologies I ever worked with:</p>
+                    <p>HTML, CSS, Flexbox/Grid, SASS, LESS, Bootstrap, Tailwind, JavaScript, jQuery, React.js, Vue.js, PHP, Laravel, Composer, XAMPP, WordPress, SQL, MySQL, MS SQL, PostgreSQL, Cerner CCL, VBA, C#, Git, GitHub, Adobe CC Photoshop / Lightroom / Illustrator / Premiere Pro.</p>
+                    <p class="ps">...skills can be taught, personality is inherent</p>
                 </div>
                 <div class="column right">
                     <div class="bars">
@@ -154,14 +166,14 @@
                     <div class="bars">
                         <div class="info">
                             <span>CSS</span>
-                            <span>80%</span>
+                            <span>90%</span>
                         </div>
                         <div class="line css"></div>
                     </div>
                     <div class="bars">
                         <div class="info">
                             <span>MySQL</span>
-                            <span>70%</span>
+                            <span>80%</span>
                         </div>
                         <div class="line mysql"></div>
                     </div>
@@ -187,7 +199,7 @@
                 <div class="card">
                     <div class="box">
                         <img src="img/logo-irondog-2.jpg" alt="">
-                        <div class="text">Iron Dog, Inc</div>
+                        <div class="card-title">Iron Dog</div>
                         <p>"Thanks Artem and Andrey overall course time has been corrected! They are helping <a href="https://www.irondog.org/" target="_blank" rel="noopener noreferrer">Iron Dog</a> to develop an application to assist with tracking and reporting time during the race..."</p>
                         <p><span>- <a href="https://www.linkedin.com/in/kevinkastner/" target="_blank" rel="noopener noreferrer">Kevin Kastner</a>, Executive Director & CEO</span></p>
                     </div>
@@ -197,7 +209,7 @@
                 <div class="card">
                     <div class="box">
                         <img src="img/logo-thenorthernlight-1.jpg" alt="">
-                        <div class="text">The Northern Light</div>
+                        <div class="card-title">The Northern Light</div>
                         <p>"Recognizes Andrey for his layout design contribution to <a href="https://www.thenorthernlight.org/" target="_blank" rel="noopener noreferrer">The Northern Light</a> newspaper this week of the 19 of February, two-thousand and eight. His dedication has been noted by colleagues, advisers and the community served by this proud media organiation..."</p>
                     </div>
                 </div>
@@ -206,7 +218,7 @@
                 <div class="card">
                     <div class="box">
                         <img src="img/logo-anthc-1.png" alt="">
-                        <div class="text"><a href="https://anthc.org/" target="_blank" rel="noopener noreferrer">ANTHC</a></div>
+                        <div class="card-title"><a href="https://anthc.org/" target="_blank" rel="noopener noreferrer">ANTHC</a></div>
                         <p>"Andrey is progressing nicely, always eager for new assignments and follows through as required on the projects..."</p> 
                         <p><span>- <a href="https://www.linkedin.com/in/kristen-cady-8129bb140" target="_blank" rel="noopener noreferrer">Kristen Cady</a>, Director Clinical Informatics</span></p>
                     </div>
@@ -216,7 +228,7 @@
                 <div class="card">
                     <div class="box">
                         <img src="img/logo-tau-1.jpg" alt="">
-                        <div class="text">Tech Assessment Unit</div>
+                        <div class="card-title">Tech Assessment Unit</div>
                         <p>"During his work, Andrey has established himself as a disciplined and accurate worker. He is a hardworking, highly efficient, sociable, tactful person and quickly finds a common language with people..."</p>
                         <p><span>- Irene Ivakhin, Team Manager</span></p>
                     </div>
@@ -226,7 +238,7 @@
                 <div class="card">
                     <div class="box">
                         <img src="img/logo-uaacbpp-2.jpg" alt="">
-                        <div class="text">UAA CBPP</div>
+                        <div class="card-title">UAA CBPP</div>
                         <p>"Congratulations! On behalf of Dean Bear Baker and the faculty of the <a href="https://business.uaa.alaska.edu/" target="_blank" rel="noopener noreferrer">College of Business and
                         Public Policy</a>, I'm happy to recognize your standing as a member of the Spring 2011 Dean's
                         List. It's a significant accomplishment your hard work and commitment to learning have
@@ -238,7 +250,7 @@
                 <div class="card">
                     <div class="box">
                         <img src="img/logo-startalaskait-1.webp" alt="">
-                        <div class="text">StartAlaska IT (Collaboration)</div>
+                        <div class="card-title">StartAlaska IT (Collaboration)</div>
                         <p>"His way to lead people in confidence in variety of challenges had brought him praises not just from me but other people as well. Over last couple years he has demonstrated a strong commitment to enhancing his knowledge and skills in new technologies and has grown into a productive, highly-organized and efficient team player..."</p> 
                         <p><span>- <a href="https://www.linkedin.com/in/artem-kuligin-8b1037126/" target="_blank" rel="noopener noreferrer">Art Kuligin</a>, Chief Infrastructure Engineer</span></p>
                     </div>
@@ -254,11 +266,11 @@
             <h2 class="title">Contact me</h2>
             <div class="contact-content">
                 <div class="column left">
-                    <div class="text">Let's make something great!</div>
+                    <div class="sub-title">Let's make something great!</div>
                     <p>I currently work remotely with a selected freelance client base and open for new opportunities. If you’d like to chat about a project or just have question, please fill in the form below. I aim to get back within 2 days.</p>
                 </div>
                 <div class="column right">
-                    <div class="text">Message me</div>
+                    <div class="sub-title">Message me</div>
                     <form action="https://formsubmit.co/c4e8f3f9a4eaf18dd2f972c34c6ea01c" method="POST">
                         <!-- Honeypot -->
                         <input class="hidden" type="text" name="_honey">
@@ -294,7 +306,7 @@
 
     <!-- Footer -->
     <footer>
-        <span>Created by <a href="https://www.andreywebdays.com">Andrey WebDays</a> | <span class="far fa-copyright"></span> 2022 All rights reserved.</span>
+        <span>Created by <a href="https://www.andreywebdays.com">Andrey WebDays</a></span>
     </footer>
 
 <script src="main.js"></script>

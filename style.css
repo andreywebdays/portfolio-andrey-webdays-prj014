@@ -2,16 +2,29 @@
 
 /* CSS Reset */
 :root{
-    --color-1: #009cda;
-    --color-2: #606469;
-    --color-3: #091e3f;
-    --color-4: #fff;
-    --color-5: #eea810;
-    --color-6: #fe6250;
-    --color-7: #002b88;
-    --color-8: #42c5cd;
-    --color-9: #3a3e42;
-    --color-10: #2b2d2e;
+    --color-scroll-track: #eaeef1;
+    --color-sun: #ffff00;
+    --color-moon: #fff;
+    --color-theme-toggle-bg: #0998db;
+    --color-section-1: #fff;
+    --color-section-2: #eaeef1;
+    --color-accent-1: #0998db;
+    --color-accent-2: #dd3c6e;
+    --color-typing-1: #0998db;
+    --color-typing-2: #e5b843;
+    --color-typing-3: #dd3c6e;
+    --color-typing-4: #7789c9;
+    --color-title: #09253f;
+    --color-p-text: #606469;
+    --color-btn-text: #fff;
+    --color-card-tint: rgba(49, 50, 51, 0.0);
+    --color-card-tint-hover: rgba(49, 50, 51, 0.8);
+    --color-card-text: #fff;
+    --color-card-tag-bg: #191a1b;
+    --color-carousel-bg: #ffffff;
+    --color-carousel-img: #acafb3;
+    --color-carousel-hover: #dd3c6e;
+    --color-footer-bg: #2a2e33;
 }
 
 *{
@@ -22,7 +35,7 @@
 
     /* border: 1px;
     border-color: var(--color-main-2);
-    border-style: solid; */
+    border-style: solid;  */
 }
 
 /* Scroll Bar */
@@ -30,20 +43,32 @@
     width: 10px;
 }
 ::-webkit-scrollbar-track {
-    background: #f1f1f1;
+    background: var(--color-scroll-track);
 }
 ::-webkit-scrollbar-thumb {
-    background: var(--color-1);
+    background: var(--color-accent-1);
 }
 ::-webkit-scrollbar-thumb:hover {
-    background: var(--color-1);
+    background: var(--color-accent-1);
 }
 
+/* Common Settings */
 html{
     scroll-behavior: smooth;
 }
 
-/* Common Settings */
+body{
+    background: var(--color-section-1);
+    font-family: 'Roboto', sans-serif;
+}
+
+html *{
+    transition: all 1s ease;
+    -o-transition: all 1s ease;
+    -moz-transition: all 1s ease;
+    -webkit-transition: all 1s ease;
+}
+
 .hidden{
     display: none;
 }
@@ -55,21 +80,17 @@ html{
 }
 
 section{
-    padding: 80px 0;
+    padding: 70px 0;
 }
 
 section .title{
     position: relative;
-    text-align: center;
-    font-size: 40px;
-    font-weight: 400;
     margin-bottom: 60px;
     padding-bottom: 20px;
-    font-family: 'Roboto', sans-serif;
-}
-
-.about, .projects, .skills, .references, .contact, .footer{
-    font-family: 'Roboto', sans-serif;
+    text-align: center;
+    font-size: 32px;
+    font-weight: 400;
+    color: var(--color-title);
 }
 
 .projects-content, .skills-content, .contact-content{
@@ -86,7 +107,6 @@ section .title{
     top: 0;
     padding: 30px 0;
     width: 100%;
-    font-family: 'Roboto', sans-serif;
 
     transition: all 0.3s ease;
     -o-transition: all 0.3s ease;
@@ -96,7 +116,7 @@ section .title{
 
 .navbar.sticky{
     padding: 15px 0;
-    background: var(--color-4);
+    background: var(--color-section-1);
 }
 
 .navbar .max-width{
@@ -108,11 +128,17 @@ section .title{
 .navbar .logo a{
     font-size: 35px;
     font-weight: 600;
-    color: var(--color-3);
+    color: var(--color-title);
 }
 
 .navbar .logo a span{
-    color: var(--color-1);
+    color: var(--color-accent-1);
+}
+
+.navbar .menu-theme{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 }
 
 .navbar .menu li{
@@ -125,7 +151,7 @@ section .title{
     margin-left: 25px;
     font-size: 18px;
     font-weight: 300;
-    color: var(--color-2);
+    color: var(--color-p-text);
 
     transition: color 0.3s ease;
     -o-transition: color 0.3s ease;
@@ -134,35 +160,138 @@ section .title{
 }
 
 .navbar .menu li a:hover{
-    color: var(--color-1);
+    color: var(--color-accent-1);
 }
 
 .menu-btn{
-    color: var(--color-1);
+    color: var(--color-accent-1);
     font-size: 23px;
     cursor: pointer;
     display: none;
 }
 
+/* Theme Switch */
+.theme{
+    position: relative;
+    width: 60px;
+    height: 32px;
+    margin: 0 0 0 35px;
+    border: 2px;
+    border-style: solid;
+    border-radius: 50px;
+    border-color: var(--color-accent-1);
+    background: var(--color-theme-toggle-bg);
+    overflow: hidden;
+}
+  
+.theme .theme-btn{
+    z-index: 1;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+    outline: 0;
+    
+    appearance: none;
+    -moz-appearance: none;
+    -webkit-appearance: none;    
+}
+
+.theme .theme-btn:checked + svg.theme_svg .light{
+    opacity: 0;
+
+    transform: translateX(-200%) rotate(180deg);
+    -o-transform: translateX(-200%) rotate(180deg);
+    -moz-transform: translateX(-200%) rotate(180deg);
+    -webkit-transform: translateX(-200%) rotate(180deg);   
+}
+
+.theme .theme-btn:checked + svg.theme_svg .dark{
+    opacity: 1;
+
+    transform: translateX(0) rotate(0deg);
+    -o-transform: translateX(0) rotate(0deg);
+    -moz-transform: translateX(0) rotate(0deg);
+    -webkit-transform: translateX(0) rotate(0deg);    
+}
+  
+svg{
+    transform: scale(1.2);
+}
+  
+svg.theme_svg{
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+  
+svg.theme_svg .light{
+    opacity: 1;
+    fill: var(--color-sun);
+    
+    transform-origin: 50% 50%;
+    -o-transform-origin: 50% 50%;
+    -moz-transform-origin: 50% 50%;
+    -webkit-transform-origin: 50% 50%;
+    transform: translateX(0) rotate(0deg); 
+    -o-transform: translateX(0) rotate(0deg);
+    -moz-transform: translateX(0) rotate(0deg);     
+    -webkit-transform: translateX(0) rotate(0deg);
+    transition: all 1s;
+    -o-transition: all 1s;
+    -moz-transition: all 1s;        
+    -webkit-transition: all 1s;
+}
+
+svg.theme_svg .dark{
+    opacity: 0;
+    fill: var(--color-moon);
+
+    transform-origin: 50% 50%;
+    -o-transform-origin: 50% 50%;
+    -moz-transform-origin: 50% 50%;
+    -webkit-transform-origin: 50% 50%;
+    transform: translateX(200%) rotate(45deg); 
+    -o-transform: translateX(200%) rotate(45deg);
+    -moz-transform: translateX(200%) rotate(45deg);       
+    -webkit-transform: translateX(200%) rotate(45deg);
+    transition: all 1s;   
+    -o-transition: all 1s;
+    -moz-transition: all 1s;      
+    -webkit-transition: all 1s;
+}
+
 /* Scroll Up Button */
 .scroll-up-btn{
+    z-index: 9998;
     position: fixed;
     height: 45px;
     width: 42px;
-    background: var(--color-6);
     right: 30px;
     bottom: 10px;
-    text-align: center;
-    line-height: 45px;
-    color: var(--color-4);
-    z-index: 9998;
-    font-size: 30px;
     border-radius: 6px;
     border-bottom-width: 2px;
-    cursor: pointer;
-    opacity: 0;
+    cursor: pointer; 
     pointer-events: none;
+    background: var(--color-accent-2);
+    font-size: 30px;
+    text-align: center;
+    line-height: 45px;
+    color: var(--color-btn-text);
+    opacity: 0;
+    
     transition: all 0.3s ease;
+    -o-transition: all 0.3s ease;
+    -moz-transition: all 0.3s ease;
+    -webkit-transition: all 0.3s ease;
 }
 
 .scroll-up-btn.show{
@@ -187,68 +316,80 @@ section .title{
     justify-content: space-between;
 }
 
-.about-content .left{
+.about .left{
     width: 50%;
     padding: 0 50px 0 0;
 }
 
-.about-content .title-1{
+.about .sub-title{
+    margin: 6px 0;
     font-size: 27px;
-    color: var(--color-3);
+    color: var(--color-title);
 }
 
-.about-content .title-2{
-    margin: 5px 0;
-    font-size: 27px;
-    color: var(--color-3);
-}
-.about-content .title-2 span{
-    color: var(--color-1);
+.about .sub-title span{
+    color: var(--color-typing-1);
     font-weight: 500;
 }
 
-.about-content .left p{
-    margin-bottom: 5px;
+.about .left p{
+    margin-bottom: 6px;
     text-align: justify;
-    color: var(--color-2);
+    color: var(--color-p-text);
 }
 
-.about-content .left .circles{
+.about .left .circles{
     display: flex;
     justify-content: flex-start;
     padding: 20px 0 60px 0;
 }
 
-.about-content .left a{
-    padding-right: 20px;
-}
-
-.about-content .left .circle{
+.about .left .circle{
     display: flex;
     justify-content: center;
     align-items: center;
     width: 50px;
     height: 50px;
-    background: var(--color-1);
+    background: var(--color-accent-1);
     border-radius: 50%;
-    border: 2px solid var(--color-1);
+    border: 2px solid var(--color-accent-1);
     font-size: 27px;
-    color: var(--color-4);
-    transition: all 0.3s ease;
+    color: var(--color-btn-text);
+
+    transition: all 0.3s ease !important;
+    -o-transition: all 0.3s ease !important;
+    -moz-transition: all 0.3s ease !important;
+    -webkit-transition: all 0.3s ease !important;
 }
 
-.about-content .left .circle:hover{
-    color: var(--color-1);
+.about .left a{
+    padding-right: 20px;
+
+    transition: all 0.3s ease !important;
+    -o-transition: all 0.3s ease !important;
+    -moz-transition: all 0.3s ease !important;
+    -webkit-transition: all 0.3s ease !important;
+}
+
+.about .left i{
+    transition: all 0.3s ease !important;
+    -o-transition: all 0.3s ease !important;
+    -moz-transition: all 0.3s ease !important;
+    -webkit-transition: all 0.3s ease !important;
+}
+
+.about .left .circle:hover{
+    color: var(--color-accent-1);
     background: none;    
 }
 
-.about-content .right{
+.about .right{
     display: flex;
     align-items: flex-end;
     width: 50%; 
 }
 
-.about-content .right img{
+.about .right img{
     display: flex;
     object-fit: cover;
     width: 100%;
@@ -256,15 +397,16 @@ section .title{
 
 /* Projects Section */
 .projects{
-    color: var(--color-4);
-    background: var(--color-9);
+    background: var(--color-section-2);
 }
+
 
 .projects .card{
     position: relative;
     width: calc(33% - 20px);
     height: 270px;
     border-radius: 6px;
+    color: var(--color-card-text);
     overflow: hidden; 
 }
 
@@ -273,7 +415,7 @@ section .title{
     width: 100%;
     height: 100%;
     background-size: cover;
-    background-position: 0 0;
+    background-position: 50% 0;
     text-align: center;
     overflow: hidden;
 
@@ -295,7 +437,7 @@ section .title{
     height: 50px;
     padding: 15px 30px;
     text-align: center;
-    background: var(--color-1);
+    background: var(--color-accent-1);
     /* opacity: 1; */
 
     transition: all 0.3s ease;
@@ -307,7 +449,7 @@ section .title{
     width: 100%;
     height: 100%;
     padding: 15px 30px;
-    background: rgba(49, 50, 51, 0.0);
+    background: var(--color-card-tint);
     
     transition: all 0.3s ease;
 }
@@ -349,7 +491,7 @@ section .title{
     padding: 3px 7px;
     margin: 5px 5px;
     border-radius: 6px;
-    background: var(--color-10);
+    background: var(--color-card-tag-bg);
 }
 
 .projects .card-links a{
@@ -358,19 +500,20 @@ section .title{
     border: 2px;
     border-style: solid;
     border-radius: 6px;
-    border-color: var(--color-1);
-    background: var(--color-1);
-    color: var(--color-4);
+    border-color: var(--color-accent-1);
+    background: var(--color-accent-1);
+    color: var(--color-btn-text);
+
+    transition: all 0.3s ease !important;
+    -o-transition: all 0.3s ease !important;
+    -moz-transition: all 0.3s ease !important;
+    -webkit-transition: all 0.3s ease !important;
 }
 
 .projects .card-links a:hover{
     background: transparent;
-    color: var(--color-1);
+    color: var(--color-accent-1);
 }
-
-/* .projects .card:hover .img-bg{
-    transform: scale(1.05);
-} */
 
 .projects .card:hover .card-desc{
     /* opacity: 0; */
@@ -378,7 +521,7 @@ section .title{
 }
 
 .projects .card:hover .card-tint{
-    background: rgba(49, 50, 51, 0.8);
+    background: var(--color-card-tint-hover);
 }
 
 .projects .card:hover .card-box{
@@ -386,111 +529,121 @@ section .title{
 }
 
 /* Skills Section */
-.skills .skills-content .column{
+.skills .column{
     width: calc(50% - 30px);
 }
 
-.skills .skills-content .left .text{
+.skills .left .sub-title{
     font-size: 20px;
-    font-weight: 600;
+    font-weight: 500;
     margin-bottom: 10px;
-    color: var(--color-3);
+    color: var(--color-title);
 }
 
-.skills .skills-content .left p{
+.skills .left p{
+    margin-bottom: 6px;
     text-align: justify;
-    color: var(--color-2);
+    color: var(--color-p-text);
 }
 
-.skills .skills-content .left a{
+.skills .left p.ps{
+    font-size: 12px;
+    font-style: italic;
+    font-weight: 500;
+    text-align: right;
+}
+
+.skills .left a{
     display: inline-block;
-    background: var(--color-1);
-    color: #fff;
+    background: var(--color-accent-1);
+    color: var(--color-btn-text);
     font-size: 18px;
     padding: 8px 16px;
     margin-top: 20px;
     font-weight: 400;
     border-radius: 6px;
-    border: 2px solid var(--color-1);
+    border: 2px solid var(--color-accent-1);
+    
     transition: all 0.3s ease;
+    -o-transition: all 0.3s ease;
+    -moz-transition: all 0.3s ease;
+    -webkit-transition: all 0.3s ease;
 }
 
-.skills .skills-content .left a:hover{
-    color: var(--color-1);
+.skills .left a:hover{
+    color: var(--color-accent-1);
     background: none;
 }
 
-.skills .skills-content .right .bars{
+.skills .right .bars{
     margin-bottom: 15px;
 }
 
-.skills .skills-content .right .info{
+.skills .right .info{
     display: flex;
     align-items: center;
     justify-content: space-between;
     margin-bottom: 5px;
 }
 
-.skills .skills-content .right span{
+.skills .right span{
     font-size: 18px;
     font-weight: 500;
+    color: var(--color-title);
 }
 
-.skills .skills-content .right .line{
+.skills .right .line{
     height: 5px;
     width: 100%;
-    background: lightgray;
+    background: var(--color-section-2);
     position: relative;
 }
 
-.skills .skills-content .right .line::before{
+.skills .right .line::before{
     content: "";
     position: absolute;
     height: 100%;
     top: 0;
     left: 0;
-    background: var(--color-5);
+    background: var(--color-accent-2);
 }
 
-.skills .skills-content .right .html::before{
+.skills .right .html::before{
     width: 90%;
 }
 
-.skills .skills-content .right .css::before{
-    width: 80%;
+.skills .right .css::before{
+    width: 90%;
 }
 
-.skills .skills-content .right .javascript::before{
+.skills .right .javascript::before{
     width: 50%;
 }
 
-.skills .skills-content .right .php::before{
+.skills .right .php::before{
     width: 80%;
 }
 
-.skills .skills-content .right .mysql::before{
-    width: 70%;
+.skills .right .mysql::before{
+    width: 80%;
 }
 
 /* References Section */
 .references{
-    color: var(--color-4);
-    background: var(--color-9);
+    background: var(--color-section-2);
 }
 
 .references .carousel .card{
-    background: var(--color-10);
+    background: var(--color-carousel-bg);
     border-radius: 6px;
     padding: 25px 35px;
     text-align: center;
     overflow: hidden;
-    color: var(--color-4);
 
     transition: all 0.3s ease;
-}
-
-.references .carousel .card:hover{
-    background: var(--color-2);
+    -o-transition: all 0.3s ease;
+    -moz-transition: all 0.3s ease;
+    -webkit-transition: all 0.3s ease;
 }
 
 .references .carousel .card .box{
@@ -498,21 +651,23 @@ section .title{
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    color: var(--color-p-text);
 
     transition: all 0.3s ease;
+    -o-transition: all 0.3s ease;
+    -moz-transition: all 0.3s ease;
+    -webkit-transition: all 0.3s ease;
 }
 
-.references .carousel .card:hover .box{
-    color: var(--color-4);
-    
+.references .carousel .card:hover .box{    
     transform: scale(1.05);
 }
 
-.references .carousel .card .text{
+.references .carousel .card .card-title{
+    margin: 10px 0 7px 0;
     font-size: 25px;
     font-weight: 500;
-    margin: 10px 0 7px 0;
-    color: var(--color-4);
+    color: var(--color-p-text);
 }
 
 .references .carousel .card span{
@@ -521,11 +676,11 @@ section .title{
 }
 
 .references .carousel .card a{
-    color: var(--color-4);
+    color: var(--color-p-text);
 }
 
 .references .carousel .card:hover a{
-    color: var(--color-5);
+    color: var(--color-carousel-hover);
 }
 
 .references .carousel .card img{
@@ -533,13 +688,17 @@ section .title{
     width: 150px;
     object-fit: cover;
     border-radius: 50%;
-    border: 5px solid var(--color-1);
+    border: 2px solid var(--color-carousel-img);
+    
     transition: all 0.3s ease;
+    -o-transition: all 0.3s ease;
+    -moz-transition: all 0.3s ease;
+    -webkit-transition: all 0.3s ease;
 }
 
 .references .carousel .card:hover img{
     border: 5px solid;
-    border-color: var(--color-5);
+    border-color: var(--color-carousel-hover);
 }
 
 .owl-dots{
@@ -553,7 +712,7 @@ section .title{
     margin: 0 5px;
     outline: none!important;
     border-radius: 50%;
-    border: 2px solid var(--color-1)!important;
+    border: 2px solid var(--color-accent-1)!important;
     transition: all 0.3s ease;
 }
 
@@ -563,65 +722,40 @@ section .title{
 }
 
 .owl-dot.active, .owl-dot:hover{
-    background: var(--color-1)!important;
+    background: var(--color-accent-1)!important;
 }
 
-/* CONTACT Section - Styling */
-
-
-.contact .contact-content .column{
+/* Contact Section */
+.contact .column{
     width: calc(50% - 30px);
 }
 
-.contact .contact-content .text{
+.contact .sub-title{
     font-size: 20px;
-    font-weight: 600;
-    margin-bottom: 10px;
-}
-
-.contact .contact-content .left p{
-    text-align: justify;
-}
-
-.contact .contact-content .left .icons{
-    margin: 10px 0;
-}
-
-.contact .contact-content .row{
-    display: flex;
-    height: 65px;
-    align-items: center;
-}
-
-.contact .contact-content .row .info{
-    margin-left: 30px;
-}
-
-.contact .contact-content .row i{
-    font-size: 25px;
-    color: var(--color-1);
-}
-
-.contact .contact-content .info .head{
     font-weight: 500;
+    margin-bottom: 10px;
+    color: var(--color-title);
 }
 
-.contact .contact-content .info .sub-title{
-    color: #333;
+.contact .left p{
+    margin-bottom: 20px;
+    text-align: justify;
+    color: var(--color-p-text);
 }
 
 .contact .right form .fields{
     display: flex;
 }
 
-.contact .right form .field, .contact .right form .fields .field{
+.contact .right form .field, 
+.contact .right form .fields .field{
     height: 45px;
     width: 100%;
     margin-bottom: 15px;
 }
 
 .contact .right form .textarea{
-    height: 80px;
+    height: 100px;
     width: 100%;
 }
 
@@ -629,20 +763,27 @@ section .title{
     margin-right: 10px;
 }
 
-.contact .right form .field input, .contact .right form .textarea textarea{
+.contact .right form .field input, 
+.contact .right form .textarea textarea{
     height: 100%;
     width: 100%;
-    border: 1px solid lightgrey;
+    border: 1px solid var(--color-scroll-track);
     border-radius: 6px;
     outline: none;
     padding: 0 15px;
     font-size: 17px;
-    font-family: 'Roboto', sans-serif;
+    color: var(--color-p-text);
+    background-color: var(--color-section-2);
+
     transition: all 0.3s ease;
+    -o-transition: all 0.3s ease;
+    -moz-transition: all 0.3s ease;
+    -webkit-transition: all 0.3s ease;
 }
 
-.contact .right form .field input:focus, .contact .right form .textarea textarea:focus{
-    border-color: #b3b3b3;
+.contact .right form .field input:focus, 
+.contact .right form .textarea textarea:focus{
+    border-color: var(--color-accent-1);
 }
 
 .contact .right form .textarea textarea{
@@ -656,9 +797,9 @@ section .title{
 }
 
 .right form .button-area button{
-    color: #fff;
+    color: var(--color-btn-text);
     display: block;
-    width: 160px!important;
+    width: 100px!important;
     height: 45px;
     outline: none;
     font-size: 18px;
@@ -666,81 +807,103 @@ section .title{
     border-radius: 6px;
     cursor: pointer;
     flex-wrap: nowrap;
-    background: var(--color-1);
-    border: 2px solid var(--color-1);
+    background: var(--color-accent-1);
+    border: 2px solid var(--color-accent-1);
+    
     transition: all 0.3s ease;
+    -o-transition: all 0.3s ease;
+    -moz-transition: all 0.3s ease;
+    -webkit-transition: all 0.3s ease;
 }
 
 .right form .button-area button:hover{
-    color: var(--color-1);
+    color: var(--color-accent-1);
     background: none;
 }
 
-/* FOOTER Section - Styling */
+/* Footer */
 footer{
-    background: var(--color-9);
+    background: var(--color-footer-bg);
     padding: 15px 23px;
-    color: #fff;
+    color: var(--color-carousel-img);
     text-align: center;
 }
 
 footer span a{
-    color: var(--color-1);
+    color: var(--color-typing-2);
     text-decoration: none;
 }
 
-footer span a:hover{
-    text-decoration: underline;
-}
-
-/* Responsive Media Query - Start */
-@media (max-width: 1300px){
-
-}
-
-@media (max-width: 1100px){
-    .about .about-content .left img{
-        height: 350px;
-        width: 350px;
-    }
-}
-
-@media (max-width: 990px){
+/* Responsive Media Query */
+@media (max-width: 1300px){    
+    
+    /* Common Settings */
     .max-width{
-        padding: 0 50px;
-    }
-}
-
-@media (max-width: 950px){
-    .max-width{
-        max-width: 800px;
-        padding: 0 50px;
-    }
-
-    /* General - Styling */
-    .skills .skills-content .column, .contact .contact-content .column{
-        width: 100%;
-        margin-bottom: 35px;
+        width: 1000px;
     }
     
-    /* NAVBAR - Style */
-    .navbar .menu{
+    /* About Section */
+    .about-content{
+        flex-direction: column;
+    }
+
+    .about-content .left{
+        padding: 0 0 0 0;
+        width: 100%;
+    }
+
+    .about-content .left .circles{
+        
+        justify-content: center;
+        padding: 20px 0 100px 0;
+    }
+
+    .about-content .right{
+        width: 100%;
+    }
+
+    /* Projects Section */
+    .projects .card{
+        margin-bottom: 20px;
+        width: calc(50% - 10px);
+        height: 300px;
+    }
+
+    /* Skills Section */
+    .skills .column{
+        width: calc(50% - 10px);
+    }
+
+}
+
+@media (max-width: 1000px){
+    
+    /* Common Settings */
+    .max-width{
+        padding: 0 50px;
+        max-width: 100%;
+    }
+
+    /* Navigation */
+    .navbar .menu-theme{
+        display: flex;
+        flex-direction: column;
         position: fixed;
         height: 100vh;
         width: 100%;
         left: -100%;
         top: 0;
-        background: #111;
+        background: var(--color-section-1);
+        transition: all 0.3s ease;
         text-align: center;
         padding-top: 80px;
-        transition: all 0.3s ease;
     }
-
+    
     .menu-btn i.active:before{
         content: "\f00d"; /* make menu item look like an X */
     }
 
-    .navbar .menu.active{
+    .navbar .menu-theme.active{
         left: 0;
     }
 
@@ -754,45 +917,55 @@ footer span a:hover{
         font-size: 25px;
     }
 
-    /* MENU Button - Style */
     .menu-btn{
         display: block;
         z-index: 999;
     }
 
-    .about .about-content .column{
+    /* Theme Switch */
+    .theme{
+        margin: 0 0 80px 0;    
+    }
+
+    /* Contact Section */
+    .contact .column{
         width: 100%;
-    }
-
-    .about .about-content .left{
-        display: flex;
-        justify-content: center;
-        margin: 0 auto 60px;
-    }
-
-    .about .about-content .right{
-        flex: 100%;
-    }
-
-    /* SERVICES Section - Styling */
-    .projects .projects-content .card{
-        width: calc(50% - 10px);
-        margin-bottom: 20px;
     }
 }
 
-@media (max-width: 690px){
+@media (max-width: 800px){
+    
+    /* Projects Section */
+    .projects-content .card{
+        width: 100%;
+        height: 400px;
+    }
+
+    /* Skills Section */
+    .skills .column{
+        width: 100%;
+    }
+
+    .skills .left{
+        margin-bottom: 40px;
+    }
+}
+
+@media (max-width: 600px){
 
     .max-width{
-        padding: 0 23px;
+        padding: 0 25px;
     }
 
-    /* SERVICES Section - Styling */
-    .projects .projects-content .card{
+    /* About Section */
+    .about-content .left .circles{
+        padding: 20px 0 80px 0;
+    }
+    
+    /* Projects Section */
+    .projects-content .card{
         width: 100%;
+        height: 300px;
     }
-}
-
-@media (max-width: 500px){
-
+    
 }
