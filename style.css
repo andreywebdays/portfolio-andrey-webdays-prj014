@@ -22,7 +22,6 @@
     --color-card-text: #fff;
     --color-card-tag-bg: #191a1b;
     --color-carousel-bg: #ffffff;
-    --color-carousel-img: #acafb3;
     --color-carousel-hover: #dd3c6e;
     --color-footer-bg: #2a2e33;
 }
@@ -680,12 +679,12 @@ svg.theme_svg .dark{
     -webkit-transition: all 0.3s ease;
 }
 
-.references .carousel .card:hover .box{    
+/* .references .carousel .card:hover .box{    
     transform: scale(1.05);
     -o-transform: scale(1.05);
     -moz-transform: scale(1.05);
     -webkit-transform: scale(1.05);
-}
+} */
 
 .references .carousel .card .card-title{
     margin: 10px 0 7px 0;
@@ -712,7 +711,9 @@ svg.theme_svg .dark{
     width: 150px;
     object-fit: cover;
     border-radius: 50%;
-    border: 2px solid var(--color-carousel-img);
+    outline: 2px;
+    outline-style: solid;
+    outline-color: var(--color-section-2);
     
     transition: all 0.3s ease;
     -o-transition: all 0.3s ease;
@@ -721,8 +722,9 @@ svg.theme_svg .dark{
 }
 
 .references .carousel .card:hover img{
-    border: 5px solid;
-    border-color: var(--color-carousel-hover);
+    outline: 5px;
+    outline-style: solid;
+    outline-color: var(--color-accent-2);
 }
 
 .owl-dots{
