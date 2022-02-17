@@ -724,7 +724,7 @@ svg.theme_svg .dark{
 .references .carousel .card:hover img{
     outline: 5px;
     outline-style: solid;
-    outline-color: var(--color-accent-2);
+    outline-color: var(--color-carousel-hover);
 }
 
 .owl-dots{
