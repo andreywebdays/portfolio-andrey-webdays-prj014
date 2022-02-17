@@ -97,4 +97,21 @@ $(document).ready(function(){
         
         localStorage.setItem("theme", mode);
     };
+
+    // Show project details on smartphone (hover issue fix)
+    let projectCards = document.querySelectorAll(".projects .card")
+
+    for (var i = 0; projectCards.length > i; i++){
+        projectCards[i].addEventListener("click", function(){
+            let project = this.dataset.project;
+            $('.project .card').addClass("hover");
+
+            // showProjectDetails(project);
+            console.log("Project card: ", project);
+        });
+    };
+
+    // function showProjectDetails(){
+
+    // };
 });
