@@ -460,7 +460,7 @@ svg.theme_svg .dark{
 }
 
 .projects .card-box{
-    display: flex;
+    display: hidden;
     flex-direction: column;
     justify-content: center;
     align-items: center;
@@ -530,6 +530,7 @@ svg.theme_svg .dark{
 }
 
 .projects .card:hover .card-box{
+    display: flex;
     opacity: 1;
 }
 
