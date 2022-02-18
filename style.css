@@ -860,7 +860,7 @@ svg.theme_svg .dark{
 footer{
     background: var(--color-footer-bg);
     padding: 15px 23px;
-    color: var(--color-carousel-img);
+    color: var(--color-p-text);
     text-align: center;
 }
 
