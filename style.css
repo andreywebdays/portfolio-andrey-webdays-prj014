@@ -716,9 +716,10 @@ svg.theme_svg .dark{
     width: 150px;
     object-fit: cover;
     border-radius: 50%;
-    outline: 2px;
-    outline-style: solid;
-    outline-color: var(--color-section-2);
+    border: 5px;
+    border-style: solid;
+    border-color: var(--color-section-2);
+    background-color: var(--color-section-2);
     
     transition: all 0.3s ease;
     -o-transition: all 0.3s ease;
@@ -727,10 +728,8 @@ svg.theme_svg .dark{
 }
 
 .references .carousel .card:hover img{
-    border-radius: 50%;
-    outline: 5px;
-    outline-style: solid;
-    outline-color: var(--color-carousel-hover);
+    border-color: var(--color-carousel-hover);
+    background-color: var(--color-carousel-hover);
 }
 
 .owl-dots{
