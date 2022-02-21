@@ -409,7 +409,7 @@ svg.theme_svg .dark{
     position: relative;
     width: calc(33% - 20px);
     height: 270px;
-    margin-bottom: 20px;
+    margin-bottom: 35px;
     border-radius: 6px;
     color: var(--color-card-text);
     overflow: hidden; 
@@ -913,6 +913,7 @@ footer span a{
     /* Projects Section */
     .projects .card{
         width: calc(50% - 10px);
+        margin-bottom: 20px;
         height: 300px;
     }
 
