@@ -18,7 +18,7 @@
     --color-p-text: #606469;
     --color-btn-text: #fff;
     --color-card-tint: rgba(49, 50, 51, 0.0);
-    --color-card-tint-hover: rgba(49, 50, 51, 0.8);
+    --color-card-tint-hover: rgba(49, 50, 51, 0.85);
     --color-card-text: #fff;
     --color-card-tag-bg: #191a1b;
     --color-carousel-bg: #ffffff;
@@ -409,6 +409,7 @@ svg.theme_svg .dark{
     position: relative;
     width: calc(33% - 20px);
     height: 270px;
+    margin-bottom: 20px;
     border-radius: 6px;
     color: var(--color-card-text);
     overflow: hidden; 
@@ -429,12 +430,24 @@ svg.theme_svg .dark{
     -webkit-transition: all 0.3s ease !important;
 }
 
+.prj-irondog{
+    background-image: url(img/prj-irondog-1.jpg)
+}
+
+.prj-laravelblog{
+    background-image: url(img/prj-laravel-blog-1.jpg)
+}
+
 .prj-kq{
     background-image: url(img/prj-kq-1.jpg)
 }
 
-.prj-irondog{
-    background-image: url(img/prj-irondog-1.jpg)
+.prj-awd{
+    background-image: url(img/prj-awd-1.jpg)
+}
+
+.prj-awd-dark{
+    background-image: url(img/prj-awd-2.jpg)
 }
 
 .projects .card-desc{
@@ -899,7 +912,6 @@ footer span a{
 
     /* Projects Section */
     .projects .card{
-        margin-bottom: 20px;
         width: calc(50% - 10px);
         height: 300px;
     }
