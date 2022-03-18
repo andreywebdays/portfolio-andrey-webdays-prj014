@@ -35,7 +35,7 @@ $(document).ready(function(){
 
     // Typing text animation script
     var typing = new Typed(".typing", {
-        strings: ["&lt;h1&gt;...", "Web Developer", "<text style='color: var(--color-typing-3)'>&lt;?php&gt; echo...</text>", "<text style='color: var(--color-typing-3)'>PHP Developer</text>", "<text style='color: var(--color-typing-3)'>Back-end Developer</text>", "<text style='color: var(--color-typing-2)'>$(document).ready()...</text>", "<text style='color: var(--color-typing-2)'>Front-end Developer</text>", "<text style='color: var(--color-typing-4)'>Freelancer</text>"],
+        strings: ["&lt;h1&gt;...", "Web Developer", "<text style='color: var(--color-typing-3)'>&lt;?php&gt; echo...</text>", "<text style='color: var(--color-typing-3)'>PHP Developer</text>", "<text style='color: var(--color-typing-3)'>Back-end Developer</text>", "<text style='color: var(--color-typing-2)'>$(document).ready()...</text>", "<text style='color: var(--color-typing-2)'>Front-end Developer</text>", "<text style='color: var(--color-typing-4)'>SELECT * FROM skills...</text>", "<text style='color: var(--color-typing-4)'>Freelancer</text>"],
         typeSpeed: 100,
         backSpeed: 60,
         loop: true
