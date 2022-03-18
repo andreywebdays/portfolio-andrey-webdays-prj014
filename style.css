@@ -450,6 +450,10 @@ svg.theme_svg .dark{
     background-image: url(img/prj-awd-2.jpg)
 }
 
+.prj-joblister{
+    background-image: url(img/prj-joblister-1.jpg)
+}
+
 .projects .card-desc{
     position: absolute;
     bottom: 0;
@@ -642,7 +646,7 @@ svg.theme_svg .dark{
 }
 
 .skills .right .html::before{
-    width: 90%;
+    width: 100%;
 }
 
 .skills .right .css::before{
@@ -650,7 +654,7 @@ svg.theme_svg .dark{
 }
 
 .skills .right .javascript::before{
-    width: 50%;
+    width: 70%;
 }
 
 .skills .right .php::before{
